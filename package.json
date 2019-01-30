@@ -1,6 +1,6 @@
 {
-  "name": "@djanoskova/packagename",
-  "version": "0.2.0",
+  "name": "@djanoskova/vue-image-blur",
+  "version": "0.2.3",
   "private": false,
   "main": "./src/index.js",
   "files": [
@@ -9,6 +9,10 @@
     "public/*",
     "*.json"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/DJanoskova/Vue.js-BlurryImageLoad"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
