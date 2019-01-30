@@ -1,7 +1,7 @@
 # @djanoskova/vue-image-blur
 
 ### Demo
-See the working example at <a href="https://vue-image-blur.herokuapp.com/" target="_blank">https://vue-image-blur.herokuapp.com/</a>
+See the working example at <a href="https://vue-image-blur.herokuapp.com/" target="_blank">https://vue-image-blur.herokuapp.com/</a> and the demo code repository at <a href="https://github.com/DJanoskova/-djanoskova-vue-image-blur-demo" target="_blank">https://github.com/DJanoskova/-djanoskova-vue-image-blur-demo</a>
 
 ### Component usage
 ```
