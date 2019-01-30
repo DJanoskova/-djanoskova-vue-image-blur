@@ -1,29 +1,15 @@
-# vue-image-blur
+# Package name
 
-## Project setup
-```
-npm install
-```
+### Demo
+See the working example at 
 
-### Compiles and hot-reloads for development
+### Component usage
 ```
-npm run serve
-```
+<template>
+</template>
 
-### Compiles and minifies for production
+<script>
+export default {
+}
+</script>
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
