@@ -15,11 +15,6 @@
     top: 0;
 }
 
-.image-blur__large {
-    opacity: 0;
-}
-
 .image-blur__large.loaded {
     filter: blur(0);
-    opacity: 1;
 }

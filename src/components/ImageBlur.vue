@@ -1,7 +1,7 @@
 <template>
   <div class="image-blur" :style="styleDimensions">
-    <img class="image-blur__thumb" ref="thumb" src="">
-    <img class="image-blur__large" ref="image" src="" :class="{'loaded': loaded}" v-if="loadedThumb">
+    <img class="image-blur__thumb" ref="thumb" src="" v-if="!loadedImage">
+    <img class="image-blur__large" ref="image" src="" :class="{'loaded': loadedImage}" v-if="loadedThumb">
   </div>
 </template>
 
@@ -23,13 +23,13 @@ export default {
   },
   data () {
     return {
-      loaded: false,
+      loadedImage: false,
       loadedThumb: false
     }
   },
   methods: {
     async initLoad () {
-      this.loaded = false
+      this.loadedImage = false
       this.loadedThumb = false
       try {
         await this.handleLoadThumb()
@@ -48,9 +48,7 @@ export default {
           image.src = this.src
           resolve()
         }
-        downloadingImage.onerror = () => {
-          reject()
-        }
+        downloadingImage.onerror = reject
         downloadingImage.src = url
       })
     },
@@ -64,7 +62,7 @@ export default {
       if (!image) return
       await this.loadImage(image, this.image)
       setTimeout(() => {
-        this.loaded = true
+        this.loadedImage = true
       }, 20)
     }
   },
