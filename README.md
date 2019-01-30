@@ -1,7 +1,7 @@
-# Blurry image Load
+# @djanoskova/vue-image-blur
 
 ### Demo
-See the working example at <a href="http://blurryimages.danajanoskova.sk" target="_blank">blurryimages.danajanoskova.sk</a>.
+See the working example at <a href="https://vue-image-blur.herokuapp.com/" target="_blank">https://vue-image-blur.herokuapp.com/</a>
 
 ### Component usage
 ```
