@@ -1,7 +1,15 @@
 <template>
   <div class="image-blur" :style="styleDimensions">
-    <img class="image-blur__thumb" ref="thumb" src="">
-    <img class="image-blur__large" ref="image" src="" :class="{'loaded': loadedImage}" v-if="loadedThumb">
+    <img class="image-blur__thumb"
+      ref="thumb"
+      :src="thumb"
+      @load="onThumbLoaded">
+    <img class="image-blur__large"
+      ref="image"
+      :src="image"
+      @load="onImageLoaded"
+      :class="{'loaded': loadedImage}"
+      v-if="loadedThumb">
   </div>
 </template>
 
@@ -31,36 +39,11 @@ export default {
     async initLoad () {
       this.loadedImage = false
       this.loadedThumb = false
-      try {
-        await this.handleLoadThumb()
-        this.loadedThumb = true
-        this.$nextTick(async () => {
-          await this.handleLoadImage()
-        })
-      } catch (e) {
-        console.log(e)
-      }
     },
-    loadImage (image, url) {
-      return new Promise((resolve, reject) => {
-        const downloadingImage = new Image()
-        downloadingImage.onload = function () {
-          image.src = this.src
-          resolve()
-        }
-        downloadingImage.onerror = reject
-        downloadingImage.src = url
-      })
+    onThumbLoaded () {
+      this.loadedThumb = true
     },
-    async handleLoadThumb () {
-      const thumb = this.$refs.thumb
-      if (!thumb) return
-      await this.loadImage(thumb, this.thumb)
-    },
-    async handleLoadImage () {
-      const image = this.$refs.image
-      if (!image) return
-      await this.loadImage(image, this.image)
+    onImageLoaded () {
       setTimeout(() => {
         this.loadedImage = true
       }, 20)
